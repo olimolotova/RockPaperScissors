@@ -5,6 +5,11 @@ let computerScore = 0;
 const optionsContainer = document.querySelector('.options-container');
 const computerChoice = document.querySelector('.computer-choice');
 const scoreCard = document.querySelector('.score-card');
+const resetContainer = document.querySelector('.reset-container');
+
+let resetBtn = document.createElement("button");
+resetBtn.classList.add("reset");
+resetBtn.textContent = "Play again?";
 
 function getComputerInput() {
     const possibleGuesses = ["rock", "paper", "scissors"];
@@ -42,6 +47,9 @@ function playGame(e) {
     playRound(e.target.id, getComputerInput());
     round++
     if (round > 5) {
+
+        resetContainer.appendChild(resetBtn);
+
         if (userScore > computerScore) {
             scoreCard.textContent = "You win! Congratulations!";
         } else if (computerScore > userScore) {
@@ -54,4 +62,14 @@ function playGame(e) {
     }
 }
 
+function resetGame () {
+    round = 1;
+    userScore = 0;
+    computerScore = 0;
+    resetContainer.removeChild(resetBtn);
+    scoreCard.textContent = "0 - 0";
+    computerChoice.textContent = "";
+}
+
 optionsContainer.addEventListener("click", playGame);
+resetBtn.addEventListener("click", resetGame);

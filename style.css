@@ -67,3 +67,19 @@ p {
 .computer-choice {
     font-size: 42px;
 }
+
+.reset {
+    border: 1px solid var(--white-color);
+    border-radius: 5px;
+    padding: 15px 25px;
+    font-size: 32px;
+    color: var(--white-color);
+    background-color: var(--background-color);
+}
+
+.reset:hover {
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: var(--white-color);
+    color: var(--background-color);
+}
