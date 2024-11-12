@@ -63,3 +63,7 @@ p {
     cursor: pointer;
     transition: 0.3s;
 }
+
+.computer-choice {
+    font-size: 42px;
+}
