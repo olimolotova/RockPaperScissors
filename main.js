@@ -17,7 +17,19 @@ function getComputerInput() {
 }
 
 function playRound(userInput, computerInput) {
-    computerChoice.textContent = computerInput;
+
+    // there's probably a nicer way to make it an emoji, im just really tired and wanna go to bed at this point
+
+    let computerEmoji = "";
+    if (computerInput == "rock") {
+        computerEmoji = "🪨";
+    } else if (computerInput == "paper") {
+        computerEmoji = "📃"
+    } else {
+        computerEmoji = "✂️"
+    }
+    computerChoice.textContent = computerEmoji
+
     if (userInput == computerInput) {
         scoreCard.textContent = "This round was a draw.";
     } else {
